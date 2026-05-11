@@ -88,5 +88,9 @@ public class LoginSteps {
 		System.out.println("Login succesful, The text on the secure area page is::  " + secureAreaText);
 
 	}
+	@Then("quit from the browser")
+	public void quit_from_the_browser() {
+	    driver.close();
+	}
 
 }

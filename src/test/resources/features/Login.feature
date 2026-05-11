@@ -12,5 +12,6 @@ When User enters Username "tomsmith"
 And User enters Password "SuperSecretPassword!"
 And clicks on Login button
 Then User should be logged in successfully
+And quit from the browser
 
 
