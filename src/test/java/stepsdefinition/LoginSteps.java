@@ -20,8 +20,9 @@ public class LoginSteps {
 
 	@Given("Chrome browser is opened")
 	public void chrome_browser_is_opened() {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver = new ChromeDriver();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 		System.out.println("Chrome browser is opened");
 
 	}
@@ -61,7 +62,7 @@ public class LoginSteps {
 	@When("User enters Username {string}")
 	public void user_enters_username(String string) {
 
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username"))).sendKeys("tomsmith ");
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("username"))).sendKeys("tomsmith");
 		System.out.println("Sending the username :: tomsmith");
 	}
 
@@ -83,7 +84,7 @@ public class LoginSteps {
 	public void user_should_be_logged_in_successfully() {
 		String secureAreaText = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h2"))).getText();
 
-		Assert.assertEquals(secureAreaText, " Secure Area");
+		Assert.assertEquals(secureAreaText, "Secure Area");
 		System.out.println("Login succesful, The text on the secure area page is::  " + secureAreaText);
 
 	}
